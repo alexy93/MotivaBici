@@ -8,7 +8,7 @@ import java.util.List;
 public class Main {
 
 	public static void main(String[] args) throws ParseException {
-		// ------------------------------------------------------------------------------------------------
+		
 		//coordenadas "ruta casa-uis" (de prueba)
 		
 		// todo esto se reemplaza con la lista que se saca de la base de datos
@@ -46,6 +46,7 @@ public class Main {
 		
 		
 		// añado todas las coordenadas a una lista llamada recorrido
+		
 		List<Coordenada> recorrido = new ArrayList<Coordenada>();
 		recorrido.add(coordenada1);
 		recorrido.add(coordenada2);
@@ -67,7 +68,19 @@ public class Main {
 		recorrido.add(coordenada18);
 		recorrido.add(coordenada19);
 		recorrido.add(coordenada20);
+		recorrido.add(coordenada21);
+		recorrido.add(coordenada22);
+		recorrido.add(coordenada23);
+		recorrido.add(coordenada24);
+		recorrido.add(coordenada25);
+		recorrido.add(coordenada26);
+		recorrido.add(coordenada27);
+		recorrido.add(coordenada28);
+		recorrido.add(coordenada29);
+		recorrido.add(coordenada30);
+
 		// ----------------------------------------------------------------------------------------
+
 		List<Coordenada> normalizada = new ArrayList<Coordenada>();
 		
 		normalizada=normal(recorrido);
@@ -84,10 +97,9 @@ public class Main {
 		
 	}
 	
+
 	public static long obtenerDuracion(List todas) throws ParseException{
-		
-		
-		
+			
 		Date hora1 = new SimpleDateFormat("DD/MM/yyyy HH:mm:ss").parse(((Coordenada) todas.get(0)).getTiempo()); 
 		Date hora2 = new SimpleDateFormat("DD/MM/yyyy HH:mm:ss").parse(((Coordenada) todas.get(todas.size()-1)).getTiempo());
 		Date calibrador= new SimpleDateFormat("HH:mm:ss").parse("00:00:00");
@@ -98,11 +110,10 @@ public class Main {
 		
 		return diferencia;
 	}
-	
-	
-	
+		
 	
 	public static int obtenerMetrosAsc (List todas){
+
 		int metrosAsc=0;
 		int alt1;
 		int alt2;
@@ -113,12 +124,11 @@ public class Main {
 			res=alt2-alt1;
 			if(res>0){
 				metrosAsc=metrosAsc+res;
-			}
-			
-			
+			}			
 		}
 		return metrosAsc;
 	}
+
 	public static int obtenerMetrosDesc (List todas){
 		int metrosDesc=0;
 		int alt1;
@@ -130,14 +140,13 @@ public class Main {
 			res=alt2-alt1;
 			if(res<0){
 				metrosDesc=metrosDesc+Math.abs(res);
-			}
-			
-			
+			}			
 		}
 		return metrosDesc;
 	}
 	 
 	// normaliza la lista con las coordenadas
+
 	public static  List normal(List todas){
 		List<Coordenada> normali = new ArrayList<Coordenada>();
 		int distanciaMetros=40; //metros límite, velocidad promedio 4.5m/s
@@ -177,9 +186,7 @@ public class Main {
 			
 			
 		}
-		
-		
-		
+				
 		distanciatotal=distanciatotal+distanciaM;
 		System.out.println("distancia total   "+distanciatotal/0.000009125+"\n");
 		return normali;
