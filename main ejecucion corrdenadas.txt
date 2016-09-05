@@ -1,0 +1,188 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+
+public class Main {
+
+	public static void main(String[] args) throws ParseException {
+		// ------------------------------------------------------------------------------------------------
+		//coordenadas "ruta casa-uis" (de prueba)
+		
+		// todo esto se reemplaza con la lista que se saca de la base de datos
+		Coordenada coordenada1 =new Coordenada(7.1382268,-73.1290176,953,"30/08/2016 07:30:30");
+		Coordenada coordenada2 =new Coordenada(7.1380681,-73.1289852,954,"30/08/2016 07:31:00");
+		Coordenada coordenada3 =new Coordenada(7.137991,-73.1287288,955,"30/08/2016 07:31:30");
+		Coordenada coordenada4 =new Coordenada(7.1380271,-73.1285425,956,"30/08/2016 07:32:00");
+		Coordenada coordenada5 =new Coordenada(7.1380479,-73.1284372,957,"30/08/2016 07:32:30");
+		Coordenada coordenada6 =new Coordenada(7.1380921,-73.1282136,958,"30/08/2016 07:33:00");
+		Coordenada coordenada7 =new Coordenada(7.1381203,-73.1280711,959,"30/08/2016 07:33:30");
+		Coordenada coordenada8 =new Coordenada(7.1381432,-73.1279555,960,"30/08/2016 07:34:00");
+		Coordenada coordenada9 =new Coordenada(7.1381838,-73.1277511,961,"30/08/2016 07:34:30");
+		Coordenada coordenada10 =new Coordenada(7.1382223,-73.1275588,962,"30/08/2016 07:35:00");
+		Coordenada coordenada11 =new Coordenada(7.1382579,-73.1273811,963,"30/08/2016 07:35:30");
+		Coordenada coordenada12 =new Coordenada(7.1382874,-73.1272321,964,"30/08/2016 07:36:00");
+		Coordenada coordenada13 =new Coordenada(7.1383252,-73.1270364,965,"30/08/2016 07:36:30");
+		Coordenada coordenada14 =new Coordenada(7.1383423,-73.1269474,965,"30/08/2016 07:37:00");
+		Coordenada coordenada15 =new Coordenada(7.1383783,-73.1267591,966,"30/08/2016 07:37:30");
+		Coordenada coordenada16 =new Coordenada(7.1383952,-73.12667,967,"30/08/2016 07:38:00");
+		Coordenada coordenada17 =new Coordenada(7.1384325,-73.1264726,968,"30/08/2016 07:38:30");
+		Coordenada coordenada18 =new Coordenada(7.1384958,-73.1261442,969,"30/08/2016 07:39:00");
+		Coordenada coordenada19 =new Coordenada(7.1385476,-73.1258752,970,"30/08/2016 07:39:30");
+		Coordenada coordenada20 =new Coordenada(7.1386039,-73.1255816,971,"30/08/2016 07:40:00");
+		Coordenada coordenada21 =new Coordenada(7.138636,-73.12542,971,"30/08/2016 07:40:30");
+		Coordenada coordenada22 =new Coordenada(7.1386784,-73.1252068,972,"30/08/2016 07:41:00");
+		Coordenada coordenada23 =new Coordenada(7.1387618,-73.1247853,973,"30/08/2016 07:41:30");
+		Coordenada coordenada24 =new Coordenada(7.1388072,-73.1245699,974,"30/08/2016 07:42:00");
+		Coordenada coordenada25 =new Coordenada(7.1388705,-73.1242743,975,"30/08/2016 07:42:30");
+		Coordenada coordenada26 =new Coordenada(7.1389505,-73.1238996,977,"30/08/2016 07:43:00");
+		Coordenada coordenada27 =new Coordenada(7.1389902,-73.1236717,978,"30/08/2016 07:43:30");
+		Coordenada coordenada28 =new Coordenada(7.1390415,-73.123378,980,"30/08/2016 07:44:00");
+		Coordenada coordenada29 =new Coordenada(7.1390909,-73.1230957,981,"30/08/2016 07:44:30");
+		Coordenada coordenada30 =new Coordenada(7.1392478,-73.1230867,981,"30/08/2016 07:45:00");
+		
+		
+		
+		// añado todas las coordenadas a una lista llamada recorrido
+		List<Coordenada> recorrido = new ArrayList<Coordenada>();
+		recorrido.add(coordenada1);
+		recorrido.add(coordenada2);
+		recorrido.add(coordenada3);
+		recorrido.add(coordenada4);
+		recorrido.add(coordenada5);
+		recorrido.add(coordenada6);
+		recorrido.add(coordenada7);
+		recorrido.add(coordenada8);
+		recorrido.add(coordenada9);
+		recorrido.add(coordenada10);
+		recorrido.add(coordenada11);
+		recorrido.add(coordenada12);
+		recorrido.add(coordenada13);
+		recorrido.add(coordenada14);
+		recorrido.add(coordenada15);
+		recorrido.add(coordenada16);
+		recorrido.add(coordenada17);
+		recorrido.add(coordenada18);
+		recorrido.add(coordenada19);
+		recorrido.add(coordenada20);
+		// ----------------------------------------------------------------------------------------
+		List<Coordenada> normalizada = new ArrayList<Coordenada>();
+		
+		normalizada=normal(recorrido);
+		
+		// imprimir lista
+		System.out.println("Coordenadas filtradas: ");
+		for (int i=0;i<normalizada.size(); i++){ 
+			System.out.println(i+"     "+normalizada.get(i).getLatitud()+"    "+normalizada.get(i).getLongitud());
+		}
+		System.out.println("\n");
+		System.out.println("Metros Ascendidos: "+obtenerMetrosAsc(recorrido)+"\n");
+		System.out.println("Metros Descendidos: "+obtenerMetrosDesc(recorrido)+"\n");
+		System.out.println("Duracion: "+new java.text.SimpleDateFormat( "HH:mm:ss" ).format(  new Date(obtenerDuracion(recorrido)) ));
+		
+	}
+	
+	public static long obtenerDuracion(List todas) throws ParseException{
+		
+		
+		
+		Date hora1 = new SimpleDateFormat("DD/MM/yyyy HH:mm:ss").parse(((Coordenada) todas.get(0)).getTiempo()); 
+		Date hora2 = new SimpleDateFormat("DD/MM/yyyy HH:mm:ss").parse(((Coordenada) todas.get(todas.size()-1)).getTiempo());
+		Date calibrador= new SimpleDateFormat("HH:mm:ss").parse("00:00:00");
+		long lantes = hora1.getTime(); 
+		long lahora = hora2.getTime();
+		long calibrator =calibrador.getTime();
+		long diferencia = (lahora - lantes + calibrator);
+		
+		return diferencia;
+	}
+	
+	
+	
+	
+	public static int obtenerMetrosAsc (List todas){
+		int metrosAsc=0;
+		int alt1;
+		int alt2;
+		int res;
+		for (int i=1;i<todas.size(); i++){
+			alt2= ((Coordenada) todas.get(i)).getAltitud();
+			alt1= ((Coordenada) todas.get(i-1)).getAltitud();
+			res=alt2-alt1;
+			if(res>0){
+				metrosAsc=metrosAsc+res;
+			}
+			
+			
+		}
+		return metrosAsc;
+	}
+	public static int obtenerMetrosDesc (List todas){
+		int metrosDesc=0;
+		int alt1;
+		int alt2;
+		int res;
+		for (int i=1;i<todas.size(); i++){
+			alt2= ((Coordenada) todas.get(i)).getAltitud();
+			alt1= ((Coordenada) todas.get(i-1)).getAltitud();
+			res=alt2-alt1;
+			if(res<0){
+				metrosDesc=metrosDesc+Math.abs(res);
+			}
+			
+			
+		}
+		return metrosDesc;
+	}
+	 
+	// normaliza la lista con las coordenadas
+	public static  List normal(List todas){
+		List<Coordenada> normali = new ArrayList<Coordenada>();
+		int distanciaMetros=40; //metros límite, velocidad promedio 4.5m/s
+		double distancia = distanciaMetros*0.00000901941; //distancia límite en unidades de coordenada(40 metros)
+		double lat2; 
+		double lon2;
+		double lat1;
+		double lon1;
+		double diflat; //diferencia positiva entre las dos latitudes
+		double diflon; //diferencia positiva entre las dos longitudes
+		int apunt=0;
+		normali.add((Coordenada) todas.get(0));
+		double distanciaM=0;
+		double distanciatotal=0;
+		
+		for (int i=1;i<todas.size(); i++){
+			
+			lat2= ((Coordenada) todas.get(i)).getLatitud();
+			lon2= ((Coordenada) todas.get(i)).getLongitud();
+			lat1= ((Coordenada) todas.get(apunt)).getLatitud();
+			lon1= ((Coordenada) todas.get(apunt)).getLongitud();
+			
+			diflat= Math.abs(lat2-lat1);
+			diflon= Math.abs(lon2-lon1);
+			//se calcula la distancia real usando el método de pitágoras
+			distanciaM=Math.sqrt((Math.pow(diflat, 2))+(Math.pow(diflon, 2)));
+			
+			// se comprueba que la distancia medida sea mayor que la distancia límite,
+			if(distanciaM>distancia){ // se añade dicha coordenada a la lista normalizada y se corre el aputnador
+				normali.add((Coordenada) todas.get(i));
+				apunt=i;
+				distanciatotal=distanciatotal+distanciaM;
+			}
+			// si no se cumple la condición el apuntador se queda en la misma coordenada
+			// para verificar si la siguiente coordenada sí cumple la condición de distancia
+			// comparándola con la coordenada que tiene el apuntador
+			
+			
+		}
+		
+		
+		
+		distanciatotal=distanciatotal+distanciaM;
+		System.out.println("distancia total   "+distanciatotal/0.000009125+"\n");
+		return normali;
+	}
+
+}

@@ -1,0 +1,49 @@
+public class Coordenada {
+	
+	double latitud;
+	double longitud;
+	int altitud;
+	String tiempo;
+	
+	//getters   ---------------------------
+	public double getLatitud(){
+		return this.latitud;
+	}
+	public double getLongitud(){
+		return this.longitud;
+	}
+	public int getAltitud(){
+		return this.altitud;
+	}
+	public String getTiempo(){
+		return this.tiempo;
+	}
+	
+	// setters   -------------------------------
+	
+	public void setLatitud(double latitud){
+		this.latitud=latitud;
+	}
+	public void setLongitud(double longitud){
+		this.longitud=longitud;
+	}
+	public void setAltitud(int altitud){
+		this.altitud=altitud;
+	}
+	public void setTiempo(String tiempo){
+		this.tiempo=tiempo;
+	}
+	
+	// constructor  -------------------------------------
+	
+	public Coordenada(double latitud, double longitud, int altitud, String tiempo) {
+		
+		setLatitud(latitud);
+		setLongitud(longitud);
+		setAltitud(altitud);
+		setTiempo(tiempo);
+		
+	}
+	
+
+}
