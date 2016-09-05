@@ -7,17 +7,17 @@ public class Recorrido {
 
 	private String id_recorrido;
 	private DateFormat FechaRecorrido;
-	/*private float calorias;
+	private float calorias;
 	private float velProm;
 	private float altitud;
-	private float distancia;*/
+	private float distancia;
 	private String etiqueta;
 	private String comentarios;
-	//private DateFormat TiempoTranscurrido;
+	private DateFormat TiempoTranscurrido;
 	
-	/*Coordenada coordenada;
+	Coordenada coordenada;
 	TipodeRecorrido tipoderecorrido;
-	Dificultad dificultad;*/
+	Dificultad dificultad;
 	
 	public Recorrido(String id_recorrido, DateFormat FechaRecorrido,String etiqueta,String comentarios){
 	
@@ -43,7 +43,7 @@ public class Recorrido {
 		FechaRecorrido = fechaRecorrido;
 	}
 
-	/*public float getCalorias() {
+	public float getCalorias() {
 		return calorias;
 	}
 
@@ -73,7 +73,7 @@ public class Recorrido {
 
 	public void setDistancia(float distancia) {
 		this.distancia = distancia;
-	}*/
+	}
 
 	public String getEtiqueta() {
 		return etiqueta;
@@ -91,7 +91,7 @@ public class Recorrido {
 		this.comentarios = comentarios;
 	}
 
-	/*public DateFormat getTiempoTranscurrido() {
+	public DateFormat getTiempoTranscurrido() {
 		return TiempoTranscurrido;
 	}
 
@@ -123,7 +123,20 @@ public class Recorrido {
 		this.dificultad = dificultad;
 	}
 	
-	*/
+	public static double distanciaCoord(double lat1, double lng1, double lat2, double lng2) {  
+        //double radioTierra = 3958.75;//en millas  
+        double radioTierra = 6371;//en kilómetros  
+        double dLat = Math.toRadians(lat2 - lat1);  
+        double dLng = Math.toRadians(lng2 - lng1);  
+        double sindLat = Math.sin(dLat / 2);  
+        double sindLng = Math.sin(dLng / 2);  
+        double va1 = Math.pow(sindLat, 2) + Math.pow(sindLng, 2)  
+                * Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2));  
+        double va2 = 2 * Math.atan2(Math.sqrt(va1), Math.sqrt(1 - va1));  
+        double distancia = radioTierra * va2;  
+   
+        return distancia;  
+    }  
 	
 	
 }

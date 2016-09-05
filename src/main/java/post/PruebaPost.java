@@ -20,6 +20,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;//formato que usa el servidor 
 import javax.ws.rs.core.Response;
 
+import org.json.JSONArray;
+
 import com.google.gson.GsonBuilder;
 
 import funciones.Coordenada;
@@ -115,17 +117,20 @@ public class PruebaPost {
 		FechaRecorrido = (DateFormat)ejemplopost.get(FechaRecorrido);
 		String etiqueta= ejemplopost.getString("etiqueta");
 		String comentarios = ejemplopost.getString("comentarios");
-		/*String coordenada= ejemplopost.getString("coordenada"); 
-		String tipoderecorrido=  ejemplopost.getString("tiporecorrido");
+		String coordenada= ejemplopost.getString("coordenada"); 
+		/*String tipoderecorrido=  ejemplopost.getString("tiporecorrido");
 		String dificultad= ejemplopost.getString("dificultad");*/
 		
-		/*Coordenada[] coordenadaArray = new GsonBuilder().create().fromJson(coordenada, Coordenada[].class);
-		TipodeRecorrido[] tiporecArray = new GsonBuilder().create().fromJson(tipoderecorrido, TipodeRecorrido[].class);*/
+
+	    JSONArray jsonArray = new JSONArray(coordenada);
+		
+		//Coordenada[] coordenadaArray = new GsonBuilder().create().fromJson(coordenada, Coordenada[].class);
+		/*TipodeRecorrido[] tiporecArray = new GsonBuilder().create().fromJson(tipoderecorrido, TipodeRecorrido[].class);*/
 		
 		
 		recorrido = new Recorrido( id_recorrido,  FechaRecorrido,  etiqueta,  comentarios);
 		
-		entrada=recorrido.getId_recorrido()+recorrido.getFechaRecorrido()+recorrido.getEtiqueta()+recorrido.getComentarios();
+		entrada=recorrido.getId_recorrido()+recorrido.getFechaRecorrido()+recorrido.getEtiqueta()+recorrido.getComentarios()+jsonArray;
 		
 		return entrada;
 	}
