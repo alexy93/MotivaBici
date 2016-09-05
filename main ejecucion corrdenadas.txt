@@ -9,29 +9,39 @@ public class Main {
 
 	public static void main(String[] args) throws ParseException {
 		// ------------------------------------------------------------------------------------------------
-		//coordenadas "inventadas" (de prueba)
+		//coordenadas "ruta casa-uis" (de prueba)
 		
 		// todo esto se reemplaza con la lista que se saca de la base de datos
-		Coordenada coordenada1 =new Coordenada(7.133933,-73.124321,980,"15/05/2006 06:00:40");
-		Coordenada coordenada2 =new Coordenada(7.133973,-73.124063,981,"15/05/2006 06:30:30");
-		Coordenada coordenada3 =new Coordenada(7.134050,-73.123773,982,"15/05/2006 07:00:30");
-		Coordenada coordenada4 =new Coordenada(7.134152,-73.123287,983,"15/05/2006 07:30:30");
-		Coordenada coordenada5 =new Coordenada(7.134291,-73.123001,984,"15/05/2006 08:00:00");
-		Coordenada coordenada6 =new Coordenada(7.134292,-73.123001,984,"15/05/2006 08:20:30");
-		Coordenada coordenada7 =new Coordenada(7.134421,-73.122394,982,"15/05/2006 08:40:30");
-		Coordenada coordenada8 =new Coordenada(7.134627,-73.122200,975,"15/05/2006 09:00:30");
-		Coordenada coordenada9 =new Coordenada(7.134978,-73.122272,977,"15/05/2006 09:20:30");
-		Coordenada coordenada10 =new Coordenada(7.135417,-73.122340,980,"15/05/2006 09:40:30");
-		Coordenada coordenada11 =new Coordenada(7.135963,-73.122455,982,"15/05/2006 09:45:30");
-		Coordenada coordenada12 =new Coordenada(7.136567,-73.122556,984,"15/05/2006 09:50:30");
-		Coordenada coordenada13 =new Coordenada(7.136992,-73.122656,986,"15/05/2006 09:51:30");
-		Coordenada coordenada14 =new Coordenada(7.137378,-73.122745,982,"15/05/2006 09:52:30");
-		Coordenada coordenada15 =new Coordenada(7.137740,-73.122818,990,"15/05/2006 09:53:30");
-		Coordenada coordenada16 =new Coordenada(7.138285,-73.122888,985,"15/05/2006 09:55:30");
-		Coordenada coordenada17 =new Coordenada(7.138911,-73.123022,982,"15/05/2006 10:00:30");
-		Coordenada coordenada18 =new Coordenada(7.139581,-73.123150,983,"15/05/2006 11:30:30");
-		Coordenada coordenada19 =new Coordenada(7.139951,-73.123204,984,"15/05/2006 12:00:30");
-		Coordenada coordenada20 =new Coordenada(7.139967,-73.123150,985,"15/05/2006 12:30:30");
+		Coordenada coordenada1 =new Coordenada(7.1382268,-73.1290176,953,"30/08/2016 07:30:30");
+		Coordenada coordenada2 =new Coordenada(7.1380681,-73.1289852,954,"30/08/2016 07:31:00");
+		Coordenada coordenada3 =new Coordenada(7.137991,-73.1287288,955,"30/08/2016 07:31:30");
+		Coordenada coordenada4 =new Coordenada(7.1380271,-73.1285425,956,"30/08/2016 07:32:00");
+		Coordenada coordenada5 =new Coordenada(7.1380479,-73.1284372,957,"30/08/2016 07:32:30");
+		Coordenada coordenada6 =new Coordenada(7.1380921,-73.1282136,958,"30/08/2016 07:33:00");
+		Coordenada coordenada7 =new Coordenada(7.1381203,-73.1280711,959,"30/08/2016 07:33:30");
+		Coordenada coordenada8 =new Coordenada(7.1381432,-73.1279555,960,"30/08/2016 07:34:00");
+		Coordenada coordenada9 =new Coordenada(7.1381838,-73.1277511,961,"30/08/2016 07:34:30");
+		Coordenada coordenada10 =new Coordenada(7.1382223,-73.1275588,962,"30/08/2016 07:35:00");
+		Coordenada coordenada11 =new Coordenada(7.1382579,-73.1273811,963,"30/08/2016 07:35:30");
+		Coordenada coordenada12 =new Coordenada(7.1382874,-73.1272321,964,"30/08/2016 07:36:00");
+		Coordenada coordenada13 =new Coordenada(7.1383252,-73.1270364,965,"30/08/2016 07:36:30");
+		Coordenada coordenada14 =new Coordenada(7.1383423,-73.1269474,965,"30/08/2016 07:37:00");
+		Coordenada coordenada15 =new Coordenada(7.1383783,-73.1267591,966,"30/08/2016 07:37:30");
+		Coordenada coordenada16 =new Coordenada(7.1383952,-73.12667,967,"30/08/2016 07:38:00");
+		Coordenada coordenada17 =new Coordenada(7.1384325,-73.1264726,968,"30/08/2016 07:38:30");
+		Coordenada coordenada18 =new Coordenada(7.1384958,-73.1261442,969,"30/08/2016 07:39:00");
+		Coordenada coordenada19 =new Coordenada(7.1385476,-73.1258752,970,"30/08/2016 07:39:30");
+		Coordenada coordenada20 =new Coordenada(7.1386039,-73.1255816,971,"30/08/2016 07:40:00");
+		Coordenada coordenada21 =new Coordenada(7.138636,-73.12542,971,"30/08/2016 07:40:30");
+		Coordenada coordenada22 =new Coordenada(7.1386784,-73.1252068,972,"30/08/2016 07:41:00");
+		Coordenada coordenada23 =new Coordenada(7.1387618,-73.1247853,973,"30/08/2016 07:41:30");
+		Coordenada coordenada24 =new Coordenada(7.1388072,-73.1245699,974,"30/08/2016 07:42:00");
+		Coordenada coordenada25 =new Coordenada(7.1388705,-73.1242743,975,"30/08/2016 07:42:30");
+		Coordenada coordenada26 =new Coordenada(7.1389505,-73.1238996,977,"30/08/2016 07:43:00");
+		Coordenada coordenada27 =new Coordenada(7.1389902,-73.1236717,978,"30/08/2016 07:43:30");
+		Coordenada coordenada28 =new Coordenada(7.1390415,-73.123378,980,"30/08/2016 07:44:00");
+		Coordenada coordenada29 =new Coordenada(7.1390909,-73.1230957,981,"30/08/2016 07:44:30");
+		Coordenada coordenada30 =new Coordenada(7.1392478,-73.1230867,981,"30/08/2016 07:45:00");
 		
 		
 		
