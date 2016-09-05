@@ -12,13 +12,28 @@ public class Usuario {
 	private DateFormat FechaNacimiento;
 	private String genero;
 	private String telefono;
+	private float altura;
+	private float peso;
 	
-	public Usuario(){
-		
+	public float getAltura() {
+		return altura;
 	}
 
+	public void setAltura(float altura) {
+		this.altura = altura;
+	}
+
+	public float getPeso() {
+		return peso;
+	}
+
+	public void setPeso(float peso) {
+		this.peso = peso;
+	}
+
+	
 	public Usuario(String Nombre, String Apellido, String id_user, String password, String correo, 
-			DateFormat fechaNacimiento2, String genero, String telefono){
+			DateFormat fechaNacimiento2, String genero, String telefono, float altura, float peso){
 		
 		this.Nombre = Nombre;
 		this.Apellido = Apellido;
@@ -28,6 +43,8 @@ public class Usuario {
 		this.FechaNacimiento = fechaNacimiento2;
 		this.genero = genero;
 		this.telefono = telefono;
+		this.altura= altura;
+		this.peso = peso;
 	}
 
 	public String getNombre() {

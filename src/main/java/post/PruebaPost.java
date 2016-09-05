@@ -9,6 +9,7 @@ import java.util.List;
 
 import javax.json.Json;
 import javax.json.JsonArray;
+import javax.json.JsonNumber;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
 import javax.ws.rs.Consumes;//Define el tipo de archivo que resive el servicio
@@ -72,11 +73,18 @@ public class PruebaPost {
 		FechaNacimiento= (DateFormat) ejemplopost.get(FechaNacimiento);
 		String genero = ejemplopost.getString("genero");
 		String telefono = ejemplopost.getString("telefono");
+		String altura = ejemplopost.getString("altura");
+		String peso = ejemplopost.getString("peso");
 		
-		usuario =new Usuario(Nombre, Apellido, id_user, password, correo,  FechaNacimiento,  genero,  telefono);
+		float faltura = Float.parseFloat(altura);
+		float fpeso = Float.parseFloat(peso);
+		
+		
+		
+		usuario =new Usuario(Nombre, Apellido, id_user, password, correo,  FechaNacimiento,  genero,  telefono, faltura, fpeso);
 		
 		entrada=usuario.getNombre()+usuario.getApellido()+usuario.getId_user()+usuario.getPassword()+usuario.getCorreo()+usuario.getFechaNacimiento()+
-				usuario.getGenero()+usuario.getTelefono();
+				usuario.getGenero()+usuario.getTelefono()+usuario.getAltura()+usuario.getPeso();
 		
 		return entrada;
 	}
